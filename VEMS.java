@@ -262,3 +262,115 @@ private void puc() {
         System.out.println("Your Problem isn't listed, try changing to new tyres");
     }
  }
+
+public class Car
+{
+ private int yearModel;
+ private String make;
+ private int speed; 
+ public Car(int yearModel, String make)
+  {
+    this.yearModel = yearModel;
+    this.make = make;
+  }
+ public int getYearModel() 
+ {
+    return yearModel;
+ }
+ public String getMake() 
+ {
+    return make; 
+ }
+ public int getSpeed() 
+ {
+   System.out.println("You are going " + speed + " mph");
+    return speed;
+ }
+ public void accelerate() 
+ {
+     speed += 5;
+ }
+ public void brake () 
+ {
+     speed-=5;
+ }
+}
+public void speed() {
+    Scanner scan = new Scanner(System.in);
+    int rpm;      //vehicle RPM
+    int g;        //vehicle gear ratio
+    int a;        //vehicle axle ratio
+    int t;        //vehicle tire size (inch radius)
+    System.out.println("Enter vehicle RPM: /n");
+    rpm= scan.nextInt();
+    System.out.println("enter vehicle's gear ratio: /n");
+    g= scan.nextInt();
+    System.out.println("Enter vehicle's axle ratio: /n");
+    a= scan.nextInt();
+    System.out.println("Enter vehicle's tire size: /n");
+    t=scan.nextInt();
+    int v= (rpm*3.14*2*t)/(a*g);
+    System.out.println("Vehicle's Velocity is:"+ v);
+}
+
+
+public void age()) 
+{
+    Scanner scan = new Scanner(System.in);
+    // present date 
+    int current_date; 
+    int current_month; 
+    int current_year; 
+
+    // birth dd// mm// yyyy 
+    int birth_date; 
+    int birth_month; 
+    int birth_year; 
+    int month[] = { 31, 28, 31, 30, 31, 30, 31,31, 30, 31, 30, 31 }; 
+    System.out.println("Enter Current date");
+    current_date=scan.nextInt();
+    System.out.println("Enter Current month");
+    current_month=scan.nextInt();
+    System.out.println("Enter Current year");
+    current_year=scan.nextInt();
+    System.out.println("Enter birth date");
+    birth_date=scan.nextInt();
+    System.out.println("Enter birth month");
+    birth_month=scan.nextInt();
+    System.out.println("Enter birth year");
+    birth_year=scan.nextInt();
+      
+            // if birth date is greater then current  
+            // birth_month, then donot count this month 
+            // and add 30 to the date so as to subtract  
+            // the date and get the remaining days 
+            if (birth_date > current_date) 
+            { 
+                current_month = current_month - 1; 
+                current_date = current_date + month[birth_month - 1]; 
+            } 
+      
+            // if birth month exceeds current month,  
+            // then do not count this year and add  
+            // 12 to the month so that we can subtract 
+            // and find out the difference 
+            if (birth_month > current_month) 
+            { 
+                current_year = current_year - 1; 
+                current_month = current_month + 12; 
+            } 
+      
+            // calculate date, month, year 
+            int calculated_date = current_date - birth_date; 
+            int calculated_month = current_month - birth_month; 
+            int calculated_year = current_year - birth_year; 
+      
+            // print the present age 
+            System.out.println("Present Age"); 
+            System.out.println("Years: " + calculated_year + " Months: " + calculated_month + " Days: " + calculated_date); 
+} 
+        
+
+
+
+
